@@ -41,7 +41,7 @@ Check groups and users:\
 `$ sudo service ssh restart`\
 `$ sudo service ssh status`\
 4. Port forwarding 4242 > 4243 (if port 4242 is already taken): `VirtualBox` > `select VM` > `Settings` > `Network` > `Advanced` > `Port Forwarding` > Enter these infos: `Name: SSH, Protocol: TCP, Host IP: (leave empty), Host: 22, Guest IP: (leave empty), Guest port: 4242`\
-5. Connect to VM from outside: `$ ssh <eproust>@localhost -p 22`
+5. From now, continue this tuto on your computer terminal: `$ ssh <eproust>@localhost -p 22`
 	
 ## 4. UFW (Uncomplicated Firewall)
 	
