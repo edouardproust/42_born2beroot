@@ -7,7 +7,7 @@
 [Create VB using iso image]([https://github.com/chlimous/42-born2beroot_guide?tab=readme-ov-file#writing-the-cript](https://github.com/gemartin99/Born2beroot-Tutorial/blob/main/README_EN.md#81--manual-partition))
 
 *Start a VM: `VBoxManage startvm "<born2beroot>"`*\
-*Stop a VM: `VBoxManage controlvm "VM_NAME" poweroff`*
+*Stop a VM: `VBoxManage controlvm "<born2beroot>" poweroff`*
 
 ## 2. Install sudo & add users / groups
 
