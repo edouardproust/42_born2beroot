@@ -8,16 +8,16 @@
 
 ## 2. Install sudo & add users / groups
 
-	`$ su`
-	`# apt update && sudo apt upgrade -y`
-	`# apt install sudo`
-	`# sudo adduser <eproust> <sudo>`
-	`# sudo addgroup <user42>`
-	`# sudo adduser <eproust> <user42>`
-    Maybe need to reboot to see the changes: `sudo reboot`
-	Then check groups and users:
-	`$ getent passwd <eproust>` (file `/etc/passwd`)
-	`$ getent group <sudo|user42>` (file `/etc/group`)
+`$ su`\
+`# apt update && sudo apt upgrade -y`\
+`# apt install sudo`\
+`# sudo adduser <eproust> <sudo>`\
+`# sudo addgroup <user42>`\
+`# sudo adduser <eproust> <user42>`\
+Maybe need to reboot to see the changes: `sudo reboot`\
+Then check groups and users:\
+`$ getent passwd <eproust>` (file `/etc/passwd`)\
+`$ getent group <sudo|user42>` (file `/etc/group`)\
 	
 ## 3. SSH
 
