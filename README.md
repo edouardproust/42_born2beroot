@@ -14,32 +14,32 @@
 `# sudo adduser <eproust> <sudo>`\
 `# sudo addgroup <user42>`\
 `# sudo adduser <eproust> <user42>`\
-Maybe need to reboot to see the changes: `sudo reboot`\
-Then check groups and users:\
+Maybe need to reboot to see the changes: `sudo reboot`
+Then check groups and users:
 `$ getent passwd <eproust>` (file `/etc/passwd`)\
 `$ getent group <sudo|user42>` (file `/etc/group`)\
 	
 ## 3. SSH
 
-    $sudo apt install openssh-server
+`$sudo apt install openssh-server`\
 
-	Verify installation:
-	`$ sudo service ssh status`
-		
-	Edit SSH parameters:
-	`$ sudo nano /etc/ssh/sshd_config` ("Port 4242" + "PermitRootLogin no")
-	`$ sudo nano /etc/ssh/ssh_config` ("Port 4242")
-	
-	Verify SSH Port:
-	`$ sudo service ssh restart`
-	`$ sudo service ssh status`
-	
-	Port forwarding 4242 > 4243 (if port 4242 is already taken):
-	VirtualBox > select VM > Settings > Network > Advanced > Port Forwarding:
-	`Name: SSH, Protocol: TCP, Host IP: (leave empty), Host: 22, Guest IP: (leave empty), Guest port: 4242`
+Verify installation:
+`$ sudo service ssh status`\
+
+Edit SSH parameters:
+`$ sudo nano /etc/ssh/sshd_config` ("Port 4242" + "PermitRootLogin no")
+`$ sudo nano /etc/ssh/ssh_config` ("Port 4242")
+
+Verify SSH Port:
+`$ sudo service ssh restart`\
+`$ sudo service ssh status`\
+
+Port forwarding 4242 > 4243 (if port 4242 is already taken):
+VirtualBox > select VM > Settings > Network > Advanced > Port Forwarding:
+`Name: SSH, Protocol: TCP, Host IP: (leave empty), Host: 22, Guest IP: (leave empty), Guest port: 4242`\
     
-	Connect to VM from outside:
-	`$ ssh <eproust>@localhost -p 22`
+Connect to VM from outside:
+`$ ssh <eproust>@localhost -p 22`\
 	
 ## 4. UFW (Uncomplicated Firewall)
 	
