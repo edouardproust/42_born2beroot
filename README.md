@@ -41,15 +41,13 @@ Maybe need to **reboot** to see the changes: `sudo reboot`\
 `$ sudo service ssh restart`\
 `$ sudo service ssh status`
 4. **Port forwarding 4242 > 4243** (if port 4242 is already taken): `VirtualBox` > `select VM` > `Settings` > `Network` > `Advanced` > `Port Forwarding` > Create new rule: `Name: SSH, Protocol: TCP, Host IP: (leave empty), Host: 4243, Guest IP: (leave empty), Guest port: 4242`
-5. **Continue this tuto on your computer terminal:** `$ ssh <eproust>@localhost -p 4243`
 	
 ## 4. UFW (Uncomplicated Firewall)
 	
-`$ sudo apt install ufw -y`\
+`$ sudo apt install ufw`\
 `$ sudo ufw enable`\
-`$ sudo ufw allow <4242>`
-	
-=> Verify: `$ sudo ufw status`
+`$ sudo ufw allow <4242>` *(Verify: `$ sudo ufw status`)*\
+**/!\ Continue this tuto on your computer terminal:** `$ ssh <eproust>@localhost -p 4243`
 	
 ## 5. Update sudo config
 
