@@ -6,8 +6,8 @@
 [Download the minimal image ("netinst") of Debian](https://www.debian.org/distrib/netinst) + choose "amd64"\
 [Create VB using iso image]([https://github.com/chlimous/42-born2beroot_guide?tab=readme-ov-file#writing-the-cript](https://github.com/gemartin99/Born2beroot-Tutorial/blob/main/README_EN.md#81--manual-partition))
 
-<span style="color: gray;">Start a VM: `VBoxManage startvm "<born2beroot>"`</span>
-<span style="color: gray;">Stop a VM: `VBoxManage controlvm "VM_NAME" poweroff`</span>
+*Start a VM: `VBoxManage startvm "<born2beroot>"`*
+*Stop a VM: `VBoxManage controlvm "VM_NAME" poweroff`*
 
 ## 2. Install sudo & add users / groups
 
