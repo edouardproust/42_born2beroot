@@ -167,7 +167,7 @@ echo "#Architecture: $arch
 `$ sudo apt install lighttpd`\
 Verify status: `$ sudo service lighttpd status`\
 `$ sudo ufw allow 80 && sudo ufw status` (Firewall white-listing)\
-Enable fast-cgi module\
+Enable fast-cgi module:\
 `$ sudo apt install php php-cgi php-mysql`\
 `$ sudo lighty-enable-mod fastcgi-php`\
 `$ sudo service lighttpd force-reload`
