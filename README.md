@@ -17,42 +17,42 @@
 Maybe need to reboot to see the changes: `sudo reboot`\
 Then check groups and users:
 `$ getent passwd <eproust>` (file `/etc/passwd`)\
-`$ getent group <sudo|user42>` (file `/etc/group`)\
-	
+`$ getent group <sudo|user42>` (file `/etc/group`)
+
 ## 3. SSH
 
-`$sudo apt install openssh-server`\
+`$sudo apt install openssh-server`
 
 Verify installation:\
-`$ sudo service ssh status`\
+`$ sudo service ssh status`
 
 Edit SSH parameters:\
 `$ sudo nano /etc/ssh/sshd_config` ("Port 4242" + "PermitRootLogin no")\
-`$ sudo nano /etc/ssh/ssh_config` ("Port 4242")\
+`$ sudo nano /etc/ssh/ssh_config` ("Port 4242")
 
 Verify SSH Port:\
 `$ sudo service ssh restart`\
-`$ sudo service ssh status`\
+`$ sudo service ssh status`
 
 Port forwarding 4242 > 4243 (if port 4242 is already taken):\
 VirtualBox > select VM > Settings > Network > Advanced > Port Forwarding:\
-`Name: SSH, Protocol: TCP, Host IP: (leave empty), Host: 22, Guest IP: (leave empty), Guest port: 4242`\
+`Name: SSH, Protocol: TCP, Host IP: (leave empty), Host: 22, Guest IP: (leave empty), Guest port: 4242`
     
 Connect to VM from outside:\
-`$ ssh <eproust>@localhost -p 22`\
+`$ ssh <eproust>@localhost -p 22`
 	
 ## 4. UFW (Uncomplicated Firewall)
 	
 `$ sudo apt install ufw`\
 `$ sudo ufw enable`\
-`$ sudo ufw allow <4242>`\
+`$ sudo ufw allow <4242>`
 	
-=> Verify: `$ sudo ufw status`\
+=> Verify: `$ sudo ufw status`
 	
 ## 5. Update sudo config
 
 `$ sudo visudo -f /etc/sudoers.d/<config_global>`\
-(`visudo` command is recommended because it check syntax before saving)\
+(`visudo` command is recommended because it check syntax before saving)
 	
 ```bash
 # Password
@@ -66,10 +66,11 @@ Defaults  iolog_dir="/var/log/sudo" # Location where the I/O logs are saved
 Defaults  requiretty # Force to run sudo on a physical terminal
 Defaults  secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin" # Limit the commands run using sudo to this specific folders
 ```
-=> `$ man sudoers` to list all the 'Defaults' flags (scroll to 'SUDOERS OPTIONS')\
+=> `$ man sudoers` to list all the 'Defaults' flags (scroll to 'SUDOERS OPTIONS')
+
 Verify syntax errors:\
 `$ sudo chmod 0440 /etc/sudoers.d/<config_global>`\
-`$ sudo visudo -c`\
+`$ sudo visudo -c`
 
 ## 6. Strong password policy
 	
@@ -80,22 +81,22 @@ PASS_MAX_DAYS 30
 PASS_MIN_DAYS 2
 PASS_WARN_AGE 7
 ```
-=> `man login` to see all the options\
+=> `man login` to see all the options
 
 Apply these rules to existing users too:\
 `$ sudo chage -M <30> <root|eproust>`\
 `$ sudo chage -m <2> <root|eproust>`\
 (`$ sudo chage -W <7> <root|eproust>`)\
 `$ sudo chage -l <root|eproust>` # To verify the change\
-=> `man chage` to see all options\
+=> `man chage` to see all options
 
 Add more options for password in /etc/pam.d/common:\
 `$ sudo install libpam-pwquality`\
-`$ sudo nano /etc/pam.d/common-password` + update the line as follow:\
+`$ sudo nano /etc/pam.d/common-password` + update the line as follow:
 ```
 password requisite pam_pwquality.so retry=3 minlen=10 dcredit=-1 ucredit=-1 lcredit=-1 maxrepeat=3 usercheck=1 difok=7 enforce_for_root
 ```
-=> `man pam_pwquality` for full list of options\
+=> `man pam_pwquality` for full list of options
 	
 ## 7. CRON script
 
