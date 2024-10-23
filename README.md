@@ -51,7 +51,7 @@ Maybe need to **reboot** to see the changes: `sudo reboot`\
 	
 ## 5. Update sudo config
 
-`$ sudo visudo -f /etc/sudoers.d/<config_global>` + add this inside (`$ man sudoers` + scroll to 'SUDOERS OPTIONS'): 
+`$ sudo visudo -f /etc/sudoers.d/<config_global>` + add this inside (`$ man sudoers` + scroll to `SUDOERS OPTIONS`): 
 ```bash
 Defaults  passwd_tries=3
 Defaults  badpass_message="Wrong password you stupid!"
