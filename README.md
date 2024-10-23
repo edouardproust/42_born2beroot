@@ -35,7 +35,7 @@ Maybe need to **reboot** to see the changes: `sudo reboot`\
 
 1. **Install SSH:** `$sudo apt install openssh-server -y` *(Verify installation: `$ sudo service ssh status`)*
 2. **Edit SSH parameters:**\
-`$ sudo nano /etc/ssh/sshd_config` (Update this lines: `Port 4242` + `PermitRootLogin no`)\
+`$ sudo nano /etc/ssh/sshd_config` (Uncomment and update this lines: `Port 4242` + `PermitRootLogin no`)\
 `$ sudo nano /etc/ssh/ssh_config` (Update this line: `Port 4242`)
 3. **Verify SSH Port:**\
 `$ sudo service ssh restart`\
