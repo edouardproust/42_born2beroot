@@ -33,14 +33,14 @@ Check groups and users:\
 
 ## 3. SSH
 
-1. **Install SSH:** `$sudo apt install openssh-server -y` *(Verify installation: `$ sudo service ssh status`)*\
+1. **Install SSH:** `$sudo apt install openssh-server -y` *(Verify installation: `$ sudo service ssh status`)*
 2. **Edit SSH parameters:**\
 `$ sudo nano /etc/ssh/sshd_config` ("Port 4242" + "PermitRootLogin no")\
-`$ sudo nano /etc/ssh/ssh_config` ("Port 4242")\
+`$ sudo nano /etc/ssh/ssh_config` ("Port 4242")
 3. **Verify SSH Port:**\
 `$ sudo service ssh restart`\
-`$ sudo service ssh status`\
-4. **Port forwarding 4242 > 4243** (if port 4242 is already taken): `VirtualBox` > `select VM` > `Settings` > `Network` > `Advanced` > `Port Forwarding` > Enter these infos: `Name: SSH, Protocol: TCP, Host IP: (leave empty), Host: 22, Guest IP: (leave empty), Guest port: 4242`\
+`$ sudo service ssh status`
+4. **Port forwarding 4242 > 4243** (if port 4242 is already taken): `VirtualBox` > `select VM` > `Settings` > `Network` > `Advanced` > `Port Forwarding` > Enter these infos: `Name: SSH, Protocol: TCP, Host IP: (leave empty), Host: 22, Guest IP: (leave empty), Guest port: 4242`
 5. From now, continue this tuto on your computer terminal: `$ ssh <eproust>@localhost -p 22`
 	
 ## 4. UFW (Uncomplicated Firewall)
