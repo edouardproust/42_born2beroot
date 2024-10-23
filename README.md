@@ -176,6 +176,13 @@ Enable fast-cgi module:\
 `$ sudo apt install mariadb-server`\
 *`$ sudo service mariadb status`*\
 `$ sudo mysql_secure_installation` + Answer the questions (in order: N, N, Y, Y, Y, Y)
+Setup tables:\
+`$ sudo mariadb` + write these commands:
+```
+> CREATE DATABASE wordpress_db; # Verify: `> show databases;`
+> GRANT ALL ON wordpress_db.* TO 'eproust'@'localhost' IDENTIFIED BY '12345'; # Verify: `> select User, Host from mysql.user;`
+> exit;
+```
 
 ** Finish setup:**\
 Add port fowarding: 1672 > 80 for example\
@@ -183,14 +190,6 @@ In browser: http://localhost:1672/wordpress (NOT https) and finish setup:\
 - database: wordpress_db
 - username: <42_login>
 - password: 12345
-
-Setup tables:
-`$ sudo mariadb` + write these commands (* for optional):
-```
-> CREATE DATABASE wordpress_db; # Verify: `> show databases;`
-> GRANT ALL ON wordpress_db.* TO 'eproust'@'localhost' IDENTIFIED BY '12345'; # Verify: `> select User, Host from mysql.user;`
-> exit;
-```
 
 ## 9. Extras
     
