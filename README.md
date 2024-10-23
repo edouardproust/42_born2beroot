@@ -83,7 +83,7 @@ Add more options for password in /etc/pam.d/common:\
 `$ sudo apt install libpam-pwquality -y`\
 `$ sudo nano /etc/pam.d/common-password` + update the line as follow (`man pam_pwquality`):
 ```
-password requisite pam_pwquality.so retry=3 minlen=10 dcredit=-1 ucredit=-1 lcredit=-1 maxrepeat=3 usercheck=1 difok=7 enforce_for_root
+password     requisite     pam_pwquality.so retry=3 minlen=10 ucredit=-1 dcredit=-1 lcredit=-1 maxrepeat=3 reject_username difok=7 enforce_for_root
 ```
 
 ## 7. CRON script
