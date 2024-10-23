@@ -61,9 +61,8 @@ Defaults  iolog_dir="/var/log/sudo"
 Defaults  requiretty # Force to run sudo on a physical terminal
 Defaults  secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
 ```
-Remarks:
-- *`visudo` command is recommended because it check syntax before saving*
-- *Verify syntax errors: `$ sudo chmod 0440 /etc/sudoers.d/<config_global> && sudo visudo -c`*
+*`visudo` command is recommended because it check syntax before saving*\
+*Verify syntax errors: `$ sudo chmod 0440 /etc/sudoers.d/<config_global> && sudo visudo -c`*
 
 ## 6. Strong password policy
 	
