@@ -13,7 +13,7 @@
    - Select the VM newly created and click "Start"
    - Choose "Graphical install", then set language, location, keyboard type and locals
    - Set hostname, root and create the new user as detailled in `credentials.txt`
-   - [Create partitions manually](https://github.com/gemartin99/Born2beroot-Tutorial/blob/main/README_EN.md#81--manual-partition), install no dependencies, and install GRUB
+   - [Create partitions manually](https://github.com/gemartin99/Born2beroot-Tutorial/blob/main/README_EN.md#81--manual-partition), install no dependencies & install GRUB
 
 *Start a VM: `VBoxManage startvm "<born2beroot>"`*\
 *Stop a VM: `VBoxManage controlvm "<born2beroot>" poweroff`*
@@ -35,8 +35,8 @@ Maybe need to **reboot** to see the changes: `sudo reboot`\
 
 1. **Install SSH:** `$sudo apt install openssh-server -y` *(Verify installation: `$ sudo service ssh status`)*
 2. **Edit SSH parameters:**\
-`$ sudo nano /etc/ssh/sshd_config` (Uncomment and update this lines: `Port 4242` + `PermitRootLogin no`)\
-`$ sudo nano /etc/ssh/ssh_config` (Update this line: `Port 4242`)
+`$ sudo nano /etc/ssh/sshd_config` (Uncomment & update this lines: `Port 4242` + `PermitRootLogin no`)\
+`$ sudo nano /etc/ssh/ssh_config` (Uncomment & update this line: `Port 4242`)
 3. **Verify SSH Port:**\
 `$ sudo service ssh restart`\
 `$ sudo service ssh status`
