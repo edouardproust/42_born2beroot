@@ -66,38 +66,31 @@ Defaults  iolog_dir="/var/log/sudo" # Location where the I/O logs are saved
 Defaults  requiretty # Force to run sudo on a physical terminal
 Defaults  secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin" # Limit the commands run using sudo to this specific folders
 ```
-*`$ man sudoers` to list all the 'Defaults' flags (scroll to 'SUDOERS OPTIONS'*
-
-Verify syntax errors:\
-`$ sudo chmod 0440 /etc/sudoers.d/<config_global>`\
-`$ sudo visudo -c`
+*(List all the 'Defaults' flags: `$ man sudoers` + scroll to 'SUDOERS OPTIONS')*
+*(Verify syntax errors: `$ sudo chmod 0440 /etc/sudoers.d/<config_global> && sudo visudo -c`)*
 
 ## 6. Strong password policy
 	
-`$ sudo nano /etc/login.defs`\
-Update lines:\
+`$ sudo nano /etc/login.defs` + update lines (`man login`):
 ```
 PASS_MAX_DAYS 30
 PASS_MIN_DAYS 2
 PASS_WARN_AGE 7
 ```
-*`man login` to see all the options*
 
-Apply these rules to existing users too:\
+Apply these rules to existing users too (`man chage`):\
 `$ sudo chage -M <30> <root|eproust>`\
 `$ sudo chage -m <2> <root|eproust>`\
 *(`$ sudo chage -W <7> <root|eproust>`)*\
-`$ sudo chage -l <root|eproust>` # To verify the change\
-=> `man chage` to see all options
+`$ sudo chage -l <root|eproust>` # To verify the change
 
 Add more options for password in /etc/pam.d/common:\
 `$ sudo install libpam-pwquality`\
-`$ sudo nano /etc/pam.d/common-password` + update the line as follow:
+`$ sudo nano /etc/pam.d/common-password` + update the line as follow (`man pam_pwquality`):
 ```
 password requisite pam_pwquality.so retry=3 minlen=10 dcredit=-1 ucredit=-1 lcredit=-1 maxrepeat=3 usercheck=1 difok=7 enforce_for_root
 ```
-*`man pam_pwquality` for full list of options*
-	
+
 ## 7. CRON script
 
 `$ sudo nano </home/eproust/>monitoring.sh` and save the script below\
