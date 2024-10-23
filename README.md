@@ -9,7 +9,7 @@
    - Click "New"
    - Name and locate it, select .iso file, check "Skip Unattended Installation" + click "Next"
    - Set hardware + Virtual Hard disk size + Click "Finish"
-3. Start VM + Set languages, keyboard settings, install GRUB, etc. and finish installing the OS 
+3. Start VM + Install the OS using graphical installation: Set languages, keyboard settings, install GRUB, etc.)
 4. [Create partitions manually](https://github.com/gemartin99/Born2beroot-Tutorial/blob/main/README_EN.md#81--manual-partition)
 
 *Start a VM: `VBoxManage startvm "<born2beroot>"`*\
