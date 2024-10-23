@@ -9,11 +9,11 @@
    - Click "New"
    - Name and locate it, select .iso file, check "Skip Unattended Installation" + click "Next"
    - Set hardware + Virtual Hard disk size + Click "Finish"
-3. Start VM + Install the OS using graphical installation:
-   - Set locals, location, keyboard type
+3. OS installation:
+   - Start VM (in VirtualBox, click "Start")
+   - Choose the "Graphical install", then set locals, location, keyboard type
    - Set hostname, root and create the new user as detailled in `credentials.txt`
-5. Finish OS installation:
-   - [Create partitions manually](https://github.com/gemartin99/Born2beroot-Tutorial/blob/main/README_EN.md#81--manual-partition)
+   - Create partitions manually](https://github.com/gemartin99/Born2beroot-Tutorial/blob/main/README_EN.md#81--manual-partition)
    - Choose to install GRUB
 
 *Start a VM: `VBoxManage startvm "<born2beroot>"`*\
