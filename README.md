@@ -8,7 +8,7 @@
    In VirtualBox UI:
    - Click "New"
    - Name and locate it, select .iso file, check "Skip Unattended Installation" + click "Next"
-   - Set hardware + Virtual Hard disk size + Click "Finish"
+   - Set hardware (default) + Virtual Hard disk size (30GB) + Click "Finish"
 3. OS installation:
    - Select the VM newly created and click "Start"
    - Choose "Graphical install", then set language, location, keyboard type and locals
