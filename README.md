@@ -6,7 +6,7 @@
 [Download the minimal image ("netinst") of Debian](https://www.debian.org/distrib/netinst) + choose "amd64"\
 [Create VB using iso image]([https://github.com/chlimous/42-born2beroot_guide?tab=readme-ov-file#writing-the-cript](https://github.com/gemartin99/Born2beroot-Tutorial/blob/main/README_EN.md#81--manual-partition))
 
-*Start a VM: `VBoxManage startvm "<born2beroot>"`*
+*Start a VM: `VBoxManage startvm "<born2beroot>"`*\
 *Stop a VM: `VBoxManage controlvm "VM_NAME" poweroff`*
 
 ## 2. Install sudo & add users / groups
@@ -55,7 +55,7 @@ Connect to VM from outside:\
 ## 5. Update sudo config
 
 `$ sudo visudo -f /etc/sudoers.d/<config_global>`\
-(`visudo` command is recommended because it check syntax before saving)
+*`visudo` command is recommended because it check syntax before saving*
 	
 ```bash
 # Password
@@ -69,7 +69,7 @@ Defaults  iolog_dir="/var/log/sudo" # Location where the I/O logs are saved
 Defaults  requiretty # Force to run sudo on a physical terminal
 Defaults  secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin" # Limit the commands run using sudo to this specific folders
 ```
-=> `$ man sudoers` to list all the 'Defaults' flags (scroll to 'SUDOERS OPTIONS')
+*`$ man sudoers` to list all the 'Defaults' flags (scroll to 'SUDOERS OPTIONS'*
 
 Verify syntax errors:\
 `$ sudo chmod 0440 /etc/sudoers.d/<config_global>`\
@@ -84,7 +84,7 @@ PASS_MAX_DAYS 30
 PASS_MIN_DAYS 2
 PASS_WARN_AGE 7
 ```
-=> `man login` to see all the options
+*`man login` to see all the options*
 
 Apply these rules to existing users too:\
 `$ sudo chage -M <30> <root|eproust>`\
@@ -99,7 +99,7 @@ Add more options for password in /etc/pam.d/common:\
 ```
 password requisite pam_pwquality.so retry=3 minlen=10 dcredit=-1 ucredit=-1 lcredit=-1 maxrepeat=3 usercheck=1 difok=7 enforce_for_root
 ```
-=> `man pam_pwquality` for full list of options
+*`man pam_pwquality` for full list of options*
 	
 ## 7. CRON script
 
@@ -172,7 +172,7 @@ In browser: http://localhost:1672/wordpress (NOT https) and finish setup:\
 
 Setup database (MariaDB):
 `$ sudo apt install mariadb-server`
-*(`$ sudo service mariadb status`)*
+*`$ sudo service mariadb status`*
 `$ sudo mysql_secure_installation` + Answer the questions:
 ```
 Switch to unix_socket autentication? → N
