@@ -20,6 +20,7 @@
 
 ## 2. Install sudo & add users / groups
 
+Reboot the VM, enter encryption key, login as <42_login>, then:\
 `$ su`\
 `# apt update && sudo apt upgrade -y`\
 `# apt install sudo`\
