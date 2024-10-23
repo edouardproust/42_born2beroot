@@ -13,8 +13,7 @@
    - Select the VM newly created and click "Start"
    - Choose "Graphical install", then set language, location, keyboard type and locals
    - Set hostname, root and create the new user as detailled in `credentials.txt`
-   - [Create partitions manually](https://github.com/gemartin99/Born2beroot-Tutorial/blob/main/README_EN.md#81--manual-partition)
-   - Choose to install GRUB
+   - [Create partitions manually](https://github.com/gemartin99/Born2beroot-Tutorial/blob/main/README_EN.md#81--manual-partition), install no dependencies, and install GRUB
 
 *Start a VM: `VBoxManage startvm "<born2beroot>"`*\
 *Stop a VM: `VBoxManage controlvm "<born2beroot>" poweroff`*
