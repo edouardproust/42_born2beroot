@@ -149,12 +149,12 @@ Enable fast-cgi module:\
 
 **Setup database** (MariaDB):\
 `$ sudo apt install mariadb-server -y` *(Verify: `$ sudo service mariadb status`)*\
-`$ sudo mysql_secure_installation` + Answer the questions (in order: n, n, Y, Y, Y, Y)
+`$ sudo mysql_secure_installation` + Answer the questions (in order: n, n, Y, Y, Y, Y)\
 Setup tables:\
 `$ sudo mariadb` + write these commands:
 ```
-> CREATE DATABASE wordpress_db; # Verify: `> show databases;`
-> GRANT ALL ON wordpress_db.* TO 'eproust'@'localhost' IDENTIFIED BY '12345'; # Verify: `> select User, Host from mysql.user;`
+> CREATE DATABASE wordpress_db; # Verify: `> SHOW DATABASES;`
+> GRANT ALL ON wordpress_db.* TO '<your_login_here>'@'localhost' IDENTIFIED BY '<your_passwd_here>'; # Verify: `> SELECT User, Host FROM mysql.user;`
 > exit;
 ```
 
