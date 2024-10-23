@@ -172,9 +172,9 @@ Enable fast-cgi module:\
 `$ sudo lighty-enable-mod fastcgi-php`\
 `$ sudo service lighttpd force-reload`
 
-**Setup database** (MariaDB):
-`$ sudo apt install mariadb-server`
-*`$ sudo service mariadb status`*
+**Setup database** (MariaDB):\
+`$ sudo apt install mariadb-server`\
+*`$ sudo service mariadb status`*\
 `$ sudo mysql_secure_installation` + Answer the questions:
 ```
 Switch to unix_socket autentication? → N
