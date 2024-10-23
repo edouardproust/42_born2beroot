@@ -11,7 +11,7 @@
    - Set hardware + Virtual Hard disk size + Click "Finish"
 3. Start VM + Install the OS using graphical installation:
    - Set locals, location, keyboard type
-   - Set hostname, root and create a user as detailled in `credentials.txt`
+   - Set hostname, root and create the new user as detailled in `credentials.txt`
    - Choose to install GRUB
 5. [Create partitions manually](https://github.com/gemartin99/Born2beroot-Tutorial/blob/main/README_EN.md#81--manual-partition)
 
