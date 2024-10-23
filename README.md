@@ -1,10 +1,8 @@
 ## 1. Install VirtualBox
 
-`$ sudo apt update && sudo apt upgrade -y`
-
-`$ sudo apt install virtualbox -y`
-
-`$ virtualbox &` (To run VirtualBox. `&` is for opening it in the background)
+`$ sudo apt update && sudo apt upgrade -y`\
+`$ sudo apt install virtualbox -y`\
+`$ virtualbox &` (To run VirtualBox. `&` is for opening it in the background)\
 [Download the minimal image ("netinst") of Debian](https://www.debian.org/distrib/netinst) + choose "amd64"
 [Create VB using iso image](https://github.com/chlimous/42-born2beroot_guide?tab=readme-ov-file#writing-the-cript)
 
