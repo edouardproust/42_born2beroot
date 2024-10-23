@@ -154,7 +154,7 @@ echo "#Architecture: $arch
 
 ## 8. Install Wordpress
 	
-Download & setup WP:\
+**Download & setup WP:**\
 `$ cd /var/www/html` (Location for websites on Linux systems)\
 `$ sudo apt install wget`\
 `$ cd /tmp && wget https://wordpress.org/latest.tar.gz`\
@@ -163,11 +163,10 @@ Download & setup WP:\
 `$ sudo chown -R www-data:www-data /var/www/html/wordpress/` (Give ownership to www-data: user made for)\
 `$ sudo chmod -R 755 /var/www/html/wordpress/` (Give full permissions to the owner)
 
-Setup server (Lighttpd):\
+**Setup server** (Lighttpd):\
 `$ sudo apt install lighttpd`\
 Verify status: `$ sudo service lighttpd status`\
-`$ sudo ufw allow 80 && sudo ufw status` (Firewall white-listing)
-
+`$ sudo ufw allow 80 && sudo ufw status` (Firewall white-listing)\
 Enable fast-cgi module\
 `$ sudo apt install php php-cgi php-mysql`\
 `$ sudo lighty-enable-mod fastcgi-php`\
