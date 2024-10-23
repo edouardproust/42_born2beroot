@@ -131,26 +131,25 @@ echo "#Architecture: $arch
 ## 8. Install Wordpress
 	
 **Download & setup WP:**\
-`$ cd /var/www/html` (Location for websites on Linux systems)\
-`$ sudo apt install wget`\
+`$ sudo mkdir /var/www/html` (Location for websites on Linux systems)\
+`$ sudo apt install wget -y`\
 `$ cd /tmp && wget https://wordpress.org/latest.tar.gz`\
-`$ tar -xf latest.tar.gz`\
-`$ cp -R wordpress /var/www/html/`\
+`$ tar -xf latest.tar.gz && rm latest.tar.gz`\
+`$ sudo mv wordpress /var/www/html/`\
 `$ sudo chown -R www-data:www-data /var/www/html/wordpress/` (Give ownership to www-data: user made for)\
 `$ sudo chmod -R 755 /var/www/html/wordpress/` (Give full permissions to the owner)
 
 **Setup server** (Lighttpd):\
-`$ sudo apt install lighttpd`\
-Verify status: `$ sudo service lighttpd status`\
+`$ sudo apt install lighttpd -y` *(Verify: `$ sudo service lighttpd status`)*\
 `$ sudo ufw allow 80 && sudo ufw status` (Firewall white-listing)\
 Enable fast-cgi module:\
-`$ sudo apt install php php-cgi php-mysql`\
+`$ sudo apt install -y php php-cgi php-mysql`\
 `$ sudo lighty-enable-mod fastcgi-php`\
 `$ sudo service lighttpd force-reload`
 
 **Setup database** (MariaDB):\
-`$ sudo apt install mariadb-server` *(Verify: `$ sudo service mariadb status`)*\
-`$ sudo mysql_secure_installation` + Answer the questions (in order: N, N, Y, Y, Y, Y)
+`$ sudo apt install mariadb-server -y` *(Verify: `$ sudo service mariadb status`)*\
+`$ sudo mysql_secure_installation` + Answer the questions (in order: n, n, Y, Y, Y, Y)
 Setup tables:\
 `$ sudo mariadb` + write these commands:
 ```
