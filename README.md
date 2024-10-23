@@ -45,7 +45,7 @@ Maybe need to **reboot** to see the changes: `sudo reboot`\
 	
 ## 4. UFW (Uncomplicated Firewall)
 	
-`$ sudo apt install ufw`\
+`$ sudo apt install ufw -y`\
 `$ sudo ufw enable`\
 `$ sudo ufw allow <4242>`
 	
