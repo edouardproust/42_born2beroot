@@ -12,7 +12,7 @@ A VM can run programs and deploy apps (like an OS) but it uses software instead 
 
 ### 3. The basic difference between CentOS and Debian
 - CentOS (downstream version of RedHat Entreprise Linux) moved to CentOS (upstream version of RHEL). Rocky was created as ""100% bug-for-bug compatible" with RHEL.
-- CentOS/Rocky is for companies / Debian is for individuals
+- CentOS/Rocky is for companies / Debian is for individuals\
 **TODO: CONTINUE THIS**
 
 ### 4. The purpose of Virtual Machines
