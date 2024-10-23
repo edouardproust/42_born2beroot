@@ -51,21 +51,18 @@ Maybe need to **reboot** to see the changes: `sudo reboot`\
 	
 ## 5. Update sudo config
 
-`$ sudo visudo -f /etc/sudoers.d/<config_global>` *(visudo` command is recommended because it check syntax before saving)*
-	
+`$ sudo visudo -f /etc/sudoers.d/<config_global>` + add this inside (`$ man sudoers` + scroll to 'SUDOERS OPTIONS'): 
 ```bash
-# Password
 Defaults  passwd_tries=3
 Defaults  badpass_message="Wrong password you stupid!"
-# Logs (General & I/O logs)
-Defaults  logfile="/var/log/sudo/general_log" # Move the location of the general log file
-Defaults  log_input, log_output # Save I/O logs
-Defaults  iolog_dir="/var/log/sudo" # Location where the I/O logs are saved
-#Security:
+Defaults  logfile="/var/log/sudo/general_log"
+Defaults  log_input, log_output
+Defaults  iolog_dir="/var/log/sudo"
 Defaults  requiretty # Force to run sudo on a physical terminal
-Defaults  secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin" # Limit the commands run using sudo to this specific folders
+Defaults  secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
 ```
-- *List all the 'Defaults' flags: `$ man sudoers` + scroll to 'SUDOERS OPTIONS'*
+Remarks:
+- *`visudo` command is recommended because it check syntax before saving*
 - *Verify syntax errors: `$ sudo chmod 0440 /etc/sudoers.d/<config_global> && sudo visudo -c`*
 
 ## 6. Strong password policy
