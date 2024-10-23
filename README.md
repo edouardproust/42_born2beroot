@@ -173,8 +173,7 @@ Enable fast-cgi module:\
 `$ sudo service lighttpd force-reload`
 
 **Setup database** (MariaDB):\
-`$ sudo apt install mariadb-server`\
-*`$ sudo service mariadb status`*\
+`$ sudo apt install mariadb-server`\ *(Verify: `$ sudo service mariadb status`)*\
 `$ sudo mysql_secure_installation` + Answer the questions (in order: N, N, Y, Y, Y, Y)
 Setup tables:\
 `$ sudo mariadb` + write these commands:
