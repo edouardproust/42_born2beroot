@@ -92,7 +92,7 @@ password   requisite   pam_pwquality.so retry=3 minlen=10 ucredit=-1 dcredit=-1 
 `sudo chmod +x </home/eproust/>monitoring.sh` (to make it executable)\
 `$ sudo crontab -e -u root` (To add a new CRON job)\
 At the bottom of the file, add this line:\
-`*/10 * * * * /home/eproust/monitoring.sh | wall` (Piped `wall` to broadcast to all users)
+`*/10 * * * * /home/eproust/monitoring.sh | wall` (Piped into `wall` to broadcast to all users)
 
 ```bash
 #!/bin/bash
