@@ -86,7 +86,7 @@ PASS_WARN_AGE 7
 Apply these rules to existing users too:\
 `$ sudo chage -M <30> <root|eproust>`\
 `$ sudo chage -m <2> <root|eproust>`\
-(`$ sudo chage -W <7> <root|eproust>`)\
+*(`$ sudo chage -W <7> <root|eproust>`)*\
 `$ sudo chage -l <root|eproust>` # To verify the change\
 => `man chage` to see all options
 
@@ -100,11 +100,11 @@ password requisite pam_pwquality.so retry=3 minlen=10 dcredit=-1 ucredit=-1 lcre
 	
 ## 7. CRON script
 
-    `$ sudo nano </home/eproust/>monitoring.sh` and save the script below
-    `sudo chmod +x </home/eproust/>monitoring.sh` (to make it executable)
-    `$ sudo crontab -e -u root` (To add a new CRON job)
-    At the bottom of the file, add this line:
-    `*/10 * * * * /home/eproust/monitoring.sh | wall` (Piped `wall` to broadcast to all users)
+`$ sudo nano </home/eproust/>monitoring.sh` and save the script below\
+`sudo chmod +x </home/eproust/>monitoring.sh` (to make it executable)\
+`$ sudo crontab -e -u root` (To add a new CRON job)\
+At the bottom of the file, add this line:\
+`*/10 * * * * /home/eproust/monitoring.sh | wall` (Piped `wall` to broadcast to all users)
 
 ```bash
 #!/bin/bash
@@ -142,72 +142,74 @@ echo "#Architecture: $arch
 
 ## 8. Install Wordpress
 	
-	Download & setup WP:
-	`$ cd /var/www/html` (Location for websites on Linux systems)
-	`$ sudo apt install wget`
-	`$ cd /tmp && wget https://wordpress.org/latest.tar.gz`
-	`$ tar -xf latest.tar.gz`
-	`$ cp -R wordpress /var/www/html/`
-	`$ sudo chown -R www-data:www-data /var/www/html/wordpress/` (Give ownership to www-data: user made for)
-	`$ sudo chmod -R 755 /var/www/html/wordpress/` (Give full permissions to the owner)
+Download & setup WP:\
+`$ cd /var/www/html` (Location for websites on Linux systems)\
+`$ sudo apt install wget`\
+`$ cd /tmp && wget https://wordpress.org/latest.tar.gz`\
+`$ tar -xf latest.tar.gz`\
+`$ cp -R wordpress /var/www/html/`\
+`$ sudo chown -R www-data:www-data /var/www/html/wordpress/` (Give ownership to www-data: user made for)\
+`$ sudo chmod -R 755 /var/www/html/wordpress/` (Give full permissions to the owner)
 
-	Setup server (Lighttpd):
-	`$ sudo apt install lighttpd`
-	Verify status: `$ sudo service lighttpd status`
-	`$ sudo ufw allow 80 && sudo ufw status` (Firewall white-listing)
-	Enable fast-cgi module
-	`$ sudo apt install php php-cgi php-mysql`
-	`$ sudo lighty-enable-mod fastcgi-php`
-	`$ sudo service lighttpd force-reload`
-	Add port fowarding: 1672 > 80 for example
-	In browser: http://localhost:1672/wordpress (NOT https) and finish setup:
-		- database: wordpress_db
-		- username: eproust
-		- password: 12345
-	
-	Setup database (MariaDB):
-	`$ sudo apt install mariadb-server`
-	*`$ sudo service mariadb status`
-	`$ sudo mysql_secure_installation` + Answer the questions:
-		```
-		Switch to unix_socket autentication? → N
-		Change the root password? → N
-		Remove anonymous users? → Y
-		Disallow root login remotely? → Y
-		Remove test database and acces to it? → Y
-		Reaload privilege tables now? → Y
-		```
-	Setup tables:
-	`$ sudo mariadb` + write these commands (* for optional):
-		```
-		> CREATE DATABASE wordpress_db;
-		*> show databases;
-		> GRANT ALL ON wordpress_db.* TO 'eproust'@'localhost' IDENTIFIED BY '12345';
-		*> select User, Host from mysql.user;
-		> exit;
-	
-	
+Setup server (Lighttpd):\
+`$ sudo apt install lighttpd`\
+Verify status: `$ sudo service lighttpd status`\
+`$ sudo ufw allow 80 && sudo ufw status` (Firewall white-listing)
+
+Enable fast-cgi module\
+`$ sudo apt install php php-cgi php-mysql`\
+`$ sudo lighty-enable-mod fastcgi-php`\
+`$ sudo service lighttpd force-reload`
+
+Add port fowarding: 1672 > 80 for example\
+In browser: http://localhost:1672/wordpress (NOT https) and finish setup:\
+- database: wordpress_db\
+- username: <42_login>\
+- password: 12345
+
+Setup database (MariaDB):
+`$ sudo apt install mariadb-server`
+*(`$ sudo service mariadb status`)*
+`$ sudo mysql_secure_installation` + Answer the questions:
+```
+Switch to unix_socket autentication? → N
+Change the root password? → N
+Remove anonymous users? → Y
+Disallow root login remotely? → Y
+Remove test database and acces to it? → Y
+Reaload privilege tables now? → Y
+```
+
+Setup tables:
+`$ sudo mariadb` + write these commands (* for optional):
+```
+> CREATE DATABASE wordpress_db;
+*> show databases;
+> GRANT ALL ON wordpress_db.* TO 'eproust'@'localhost' IDENTIFIED BY '12345';
+*> select User, Host from mysql.user;
+> exit;
+```
 
 ## 9. Extras
     
-	`sudo apt update && sudo apt upgrade -y`
+`sudo apt update && sudo apt upgrade -y`
 
-	Install man & VIM:
-	`$ sudo apt install man vim`
+Install man & VIM:\
+`$ sudo apt install man vim`
 
-	Add system clock syncronization:
-	`$ sudo apt install systemd-timesyncd`
-	`$ timedatectl` (To check time sync is on)
-	(If not activated: `$ sudo systemctl <start|enable> systemd-timesyncd`)
+Add system clock syncronization:\
+`$ sudo apt install systemd-timesyncd`\
+`$ timedatectl` (To check time sync is on)\
+(If not activated: `$ sudo systemctl <start|enable> systemd-timesyncd`)
 
-	Add netcat & test TCP connexions:
-	`$ sudo apt install tmux netcat`
-	`$ tmux # to open tmux`. Ctrl+B then " to open a second terminal horizontaly. Ctrl+B then % for vertical. Ctrl+B then Arrows to switch between terminals.
-	In terminal #1: `$ watch ss -t | grep -c "ESTAB"` (To visualize TCP estbalished connexions)
-	In terminal #2: `$ nc -l 1234` (To open port 1234 and set a network). Then type "Hello"+Enter (for example) to send this to Terminal #1.
-	In terminal #3: `$ nc localhost 1234` (To connext to serveur localhost)
+Add netcat & test TCP connexions:\
+`$ sudo apt install tmux netcat`\
+`$ tmux # to open tmux`. Ctrl+B then " to open a second terminal horizontaly. Ctrl+B then % for vertical. Ctrl+B then Arrows to switch between terminals.\
+In terminal #1: `$ watch ss -t | grep -c "ESTAB"` (To visualize TCP estbalished connexions)\
+In terminal #2: `$ nc -l 1234` (To open port 1234 and set a network). Then type "Hello"+Enter (for example) to send this to Terminal #1.\
+In terminal #3: `$ nc localhost 1234` (To connext to serveur localhost)\
 
 ## 10. Get VB signature
 
-	`$ cd ~/Projects/born2beroot/`
-	`$ sha1sum <born2beroot.vdi> > ~/Projects/born2beroot/signature.txt`
+`$ cd ~/Projects/born2beroot/`\
+`$ sha1sum <born2beroot.vdi> > ~/Projects/born2beroot/signature.txt`
