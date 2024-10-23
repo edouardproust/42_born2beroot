@@ -40,7 +40,7 @@ Maybe need to **reboot** to see the changes: `sudo reboot`\
 3. **Verify SSH Port:**\
 `$ sudo service ssh restart`\
 `$ sudo service ssh status`
-4. **Port forwarding 4242 > 4243** (if port 4242 is already taken): `VirtualBox` > `select VM` > `Settings` > `Network` > `Advanced` > `Port Forwarding` > Enter these infos: `Name: SSH, Protocol: TCP, Host IP: (leave empty), Host: 22, Guest IP: (leave empty), Guest port: 4242`
+4. **Port forwarding 4242 > 4243** (if port 4242 is already taken): `VirtualBox` > `select VM` > `Settings` > `Network` > `Advanced` > `Port Forwarding` > Create new rule: `Name: SSH, Protocol: TCP, Host IP: (leave empty), Host: 22, Guest IP: (leave empty), Guest port: 4242`
 5. **Continue this tuto on your computer terminal:** `$ ssh <eproust>@localhost -p 22`
 	
 ## 4. UFW (Uncomplicated Firewall)
