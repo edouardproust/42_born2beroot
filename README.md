@@ -51,8 +51,7 @@ Maybe need to **reboot** to see the changes: `sudo reboot`\
 	
 ## 5. Update sudo config
 
-`$ sudo visudo -f /etc/sudoers.d/<config_global>`\
-*`visudo` command is recommended because it check syntax before saving*
+`$ sudo visudo -f /etc/sudoers.d/<config_global>` *(visudo` command is recommended because it check syntax before saving)*
 	
 ```bash
 # Password
@@ -66,8 +65,8 @@ Defaults  iolog_dir="/var/log/sudo" # Location where the I/O logs are saved
 Defaults  requiretty # Force to run sudo on a physical terminal
 Defaults  secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin" # Limit the commands run using sudo to this specific folders
 ```
-*(List all the 'Defaults' flags: `$ man sudoers` + scroll to 'SUDOERS OPTIONS')*
-*(Verify syntax errors: `$ sudo chmod 0440 /etc/sudoers.d/<config_global> && sudo visudo -c`)*
+- *List all the 'Defaults' flags: `$ man sudoers` + scroll to 'SUDOERS OPTIONS'*
+- *Verify syntax errors: `$ sudo chmod 0440 /etc/sudoers.d/<config_global> && sudo visudo -c`*
 
 ## 6. Strong password policy
 	
