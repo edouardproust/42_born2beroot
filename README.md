@@ -12,8 +12,9 @@
 3. Start VM + Install the OS using graphical installation:
    - Set locals, location, keyboard type
    - Set hostname, root and create the new user as detailled in `credentials.txt`
-5. Partition disks: [Create partitions manually](https://github.com/gemartin99/Born2beroot-Tutorial/blob/main/README_EN.md#81--manual-partition)
-6. Choose to install GRUB and finish OS installation
+5. Finish OS installation:
+   - [Create partitions manually](https://github.com/gemartin99/Born2beroot-Tutorial/blob/main/README_EN.md#81--manual-partition)
+   - Choose to install GRUB
 
 *Start a VM: `VBoxManage startvm "<born2beroot>"`*\
 *Stop a VM: `VBoxManage controlvm "<born2beroot>" poweroff`*
