@@ -172,13 +172,7 @@ Enable fast-cgi module:\
 `$ sudo lighty-enable-mod fastcgi-php`\
 `$ sudo service lighttpd force-reload`
 
-Add port fowarding: 1672 > 80 for example\
-In browser: http://localhost:1672/wordpress (NOT https) and finish setup:\
-- database: wordpress_db
-- username: <42_login>
-- password: 12345
-
-Setup database (MariaDB):
+**Setup database** (MariaDB):
 `$ sudo apt install mariadb-server`
 *`$ sudo service mariadb status`*
 `$ sudo mysql_secure_installation` + Answer the questions:
@@ -190,6 +184,13 @@ Disallow root login remotely? → Y
 Remove test database and acces to it? → Y
 Reaload privilege tables now? → Y
 ```
+
+** Finish setup:**\
+Add port fowarding: 1672 > 80 for example\
+In browser: http://localhost:1672/wordpress (NOT https) and finish setup:\
+- database: wordpress_db
+- username: <42_login>
+- password: 12345
 
 Setup tables:
 `$ sudo mariadb` + write these commands (* for optional):
