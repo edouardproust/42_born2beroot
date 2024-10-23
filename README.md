@@ -58,7 +58,7 @@ Defaults  badpass_message="Wrong password you stupid!"
 Defaults  logfile="/var/log/sudo/general_log"
 Defaults  log_input, log_output
 Defaults  iolog_dir="/var/log/sudo"
-Defaults  requiretty # Force to run sudo on a physical terminal
+Defaults  requiretty
 Defaults  secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
 ```
 *Using `visudo` to edit the file is recommended: it check syntax before saving*\
