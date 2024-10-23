@@ -1,9 +1,15 @@
 ## 1. Install VirtualBox
 
-`$ sudo apt update && sudo apt upgrade -y && sudo apt install virtualbox -y`\
-`$ virtualbox &` (To run VirtualBox. `&` is for opening it in the background)\
-[Download the minimal image ("netinst") of Debian](https://www.debian.org/distrib/netinst) + choose "amd64"\
-[Create partitions manually](https://github.com/gemartin99/Born2beroot-Tutorial/blob/main/README_EN.md#81--manual-partition)
+
+1. [Download the minimal image ("netinst") of Debian](https://www.debian.org/distrib/netinst) + choose "amd64"\
+2. Create VirtualBox:\
+   `$ sudo apt update && sudo apt upgrade -y && sudo apt install virtualbox -y`\
+   `$ virtualbox &` (To run VirtualBox. `&` is for opening it in the background)\
+   In VirtualBox UI:
+   - Click "New"
+   - Name and locate it, select .iso file, check "Skip Unattended Installation" + click "Next"
+   - Set hardware + Virtual Hard disk size + Click "Finish"
+4. 3. [Create partitions manually](https://github.com/gemartin99/Born2beroot-Tutorial/blob/main/README_EN.md#81--manual-partition)
 
 *Start a VM: `VBoxManage startvm "<born2beroot>"`*\
 *Stop a VM: `VBoxManage controlvm "<born2beroot>" poweroff`*
