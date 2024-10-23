@@ -175,15 +175,7 @@ Enable fast-cgi module:\
 **Setup database** (MariaDB):\
 `$ sudo apt install mariadb-server`\
 *`$ sudo service mariadb status`*\
-`$ sudo mysql_secure_installation` + Answer the questions:
-```
-Switch to unix_socket autentication? → N
-Change the root password? → N
-Remove anonymous users? → Y
-Disallow root login remotely? → Y
-Remove test database and acces to it? → Y
-Reaload privilege tables now? → Y
-```
+`$ sudo mysql_secure_installation` + Answer the questions (in order: N, N, Y, Y, Y, Y)
 
 ** Finish setup:**\
 Add port fowarding: 1672 > 80 for example\
