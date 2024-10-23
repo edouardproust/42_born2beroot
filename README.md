@@ -20,14 +20,14 @@
 
 ## 2. Install sudo & add users / groups
 
-Reboot the VM, enter encryption key, login as <42_login>, then:\
+Reboot the VM, enter encryption key, login as <42_login>, **then:**\
 `$ su` (then enter root password))\
 `# apt update && apt upgrade && apt install sudo`\
 `# sudo adduser <eproust> <sudo>`\
 `# sudo addgroup <user42>`\
 `# sudo adduser <eproust> <user42>`\
-Maybe need to reboot to see the changes: `sudo reboot`\
-Check groups and users:\
+Maybe need to **reboot** to see the changes: `sudo reboot`\
+**Check groups and users:**\
 `$ getent passwd <eproust>` (file `/etc/passwd`)\
 `$ getent group <sudo|user42>` (file `/etc/group`)
 
