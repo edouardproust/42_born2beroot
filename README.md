@@ -27,7 +27,7 @@
 `# sudo addgroup <user42>`\
 `# sudo adduser <eproust> <user42>`\
 Maybe need to reboot to see the changes: `sudo reboot`\
-Then check groups and users:
+Check groups and users:
 `$ getent passwd <eproust>` (file `/etc/passwd`)\
 `$ getent group <sudo|user42>` (file `/etc/group`)
 
