@@ -184,7 +184,7 @@ Setup tables:\
 > exit;
 ```
 
-** Finish setup:**\
+**Last steps:**\
 Add port fowarding: 1672 > 80 for example\
 In browser: http://localhost:1672/wordpress (NOT https) and finish setup:\
 - database: wordpress_db
