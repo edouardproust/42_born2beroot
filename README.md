@@ -163,8 +163,8 @@ Enable fast-cgi module\
 
 Add port fowarding: 1672 > 80 for example\
 In browser: http://localhost:1672/wordpress (NOT https) and finish setup:\
-- database: wordpress_db\
-- username: <42_login>\
+- database: wordpress_db
+- username: <42_login>
 - password: 12345
 
 Setup database (MariaDB):
@@ -183,10 +183,8 @@ Reaload privilege tables now? → Y
 Setup tables:
 `$ sudo mariadb` + write these commands (* for optional):
 ```
-> CREATE DATABASE wordpress_db;
-*> show databases;
-> GRANT ALL ON wordpress_db.* TO 'eproust'@'localhost' IDENTIFIED BY '12345';
-*> select User, Host from mysql.user;
+> CREATE DATABASE wordpress_db; # Verify: `> show databases;`
+> GRANT ALL ON wordpress_db.* TO 'eproust'@'localhost' IDENTIFIED BY '12345'; # Verify: `> select User, Host from mysql.user;`
 > exit;
 ```
 
