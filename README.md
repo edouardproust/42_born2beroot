@@ -1,12 +1,12 @@
-## 1. Install VirtualBox\
+## 1. Install VirtualBox
 
 `$ sudo apt update && sudo apt upgrade -y`\
 `$ sudo apt install virtualbox -y`\
 `$ virtualbox &` (To run VirtualBox. `&` is for opening it in the background)\
 [Download the minimal image ("netinst") of Debian](https://www.debian.org/distrib/netinst) + choose "amd64"\
-[Create VB using iso image](https://github.com/chlimous/42-born2beroot_guide?tab=readme-ov-file#writing-the-cript)\
+[Create VB using iso image]([https://github.com/chlimous/42-born2beroot_guide?tab=readme-ov-file#writing-the-cript](https://github.com/gemartin99/Born2beroot-Tutorial/blob/main/README_EN.md#81--manual-partition))
 
-## 2. Install sudo & add users / groups\
+## 2. Install sudo & add users / groups
 
 `$ su`\
 `# apt update && sudo apt upgrade -y`\
@@ -19,7 +19,7 @@ Then check groups and users:
 `$ getent passwd <eproust>` (file `/etc/passwd`)\
 `$ getent group <sudo|user42>` (file `/etc/group`)\
 	
-## 3. SSH\
+## 3. SSH
 
 `$sudo apt install openssh-server`\
 
@@ -41,7 +41,7 @@ VirtualBox > select VM > Settings > Network > Advanced > Port Forwarding:\
 Connect to VM from outside:\
 `$ ssh <eproust>@localhost -p 22`\
 	
-## 4. UFW (Uncomplicated Firewall)\
+## 4. UFW (Uncomplicated Firewall)
 	
 `$ sudo apt install ufw`\
 `$ sudo ufw enable`\
@@ -49,7 +49,7 @@ Connect to VM from outside:\
 	
 => Verify: `$ sudo ufw status`\
 	
-## 5. Update sudo config\
+## 5. Update sudo config
 
 `$ sudo visudo -f /etc/sudoers.d/<config_global>`\
 (`visudo` command is recommended because it check syntax before saving)\
@@ -71,7 +71,7 @@ Verify syntax errors:\
 `$ sudo chmod 0440 /etc/sudoers.d/<config_global>`\
 `$ sudo visudo -c`\
 
-## 6. Strong password policy\
+## 6. Strong password policy
 	
 `$ sudo nano /etc/login.defs`\
 Update lines:\
@@ -97,7 +97,7 @@ password requisite pam_pwquality.so retry=3 minlen=10 dcredit=-1 ucredit=-1 lcre
 ```
 => `man pam_pwquality` for full list of options\
 	
-## 7. CRON script\
+## 7. CRON script
 
     `$ sudo nano </home/eproust/>monitoring.sh` and save the script below
     `sudo chmod +x </home/eproust/>monitoring.sh` (to make it executable)
