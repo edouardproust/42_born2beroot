@@ -1,4 +1,4 @@
-# Questions
+# Evaluation preparation
 
 ### Project overview
 
@@ -100,26 +100,27 @@
 ## SSH
 
 - Check SSH is installed and works properly & Verify that SSH only uses port 4242: `sudo service ssh status`
-- What is SSH and the value of using it: `TODO`
+- What is SSH and the value of using it: `SSH means Secure Shell. It is a protocol for secure remote access and management of devices over an unsecured network. It encrypts data.`
 - Use SSH to log in with newly created user: `ssh <test>@localhost -p 4243`
 - Make sure we cannot use SSH with root: `ssh root@localhost -p 4243` + enter password 3 times
 
 ## Script monitoring
 
-- Explain the monitoring.sh script: `Aaa`
+- Explain the monitoring.sh script
 - What is CRON: `CRON is a time-based job scheduler in Unix-like systems. It automates tasks by running scripts or commands at specified intervals (e.g., daily, weekly) based on defined schedules in a configuration file called crontab.`
 - How the script was setup to run every 10 minutes & make it run every minutes instead: `sudo crontab -e -u root` + change the line into: `* * * * * /home/<user>/monitoring.sh | wall`
 - Stop and restart the CRON job (without changing the code):
   ```
+  sudo systemctl disable cron
+  sudo reboot
   sudo service cron status
-  
+  sudo systemctl enable cron
+  sudo service cron start
   ```
-
 
 ## Bonus
 
-- Partitions setup recheck:
-- Check Wordpress check:\
+- Check Wordpress:\
   `In browser: 'http://localhost:1672/wordpress'`
   `aaa` (Only installing the services required by the subject)
 - Check additional service installed:\
