@@ -37,12 +37,12 @@
   - Create a new user: `sudo adduser <test>`
   - Assign it a password respecting subject rules: `Test creating passwords in order and check erro messages: 'test', 'test1', 'test1A', 'test1Abcde', 'tes1Abcdef', 'HelloBcn123'`
   - Explain how rules as been applied:
-  ```
-  $ sudo visudo -f /etc/sudoers.d/<config_global>
-  $ sudo nano /etc/login.defs
-  $ sudo chage -M <30> <root|eproust>
-  $ sudo chage -m <2> <root|eproust>
-  ```
+    ```
+    $ sudo visudo -f /etc/sudoers.d/<config_global>
+    $ sudo nano /etc/login.defs
+    $ sudo chage -M <30> <root|eproust>
+    $ sudo chage -m <2> <root|eproust>
+    ```
   - Create a group named "evaluating" & assign the new user to it & check:\
     ```
     $ sudo addgroup evaluating
@@ -99,13 +99,10 @@
 
 ## SSH
 
-- Check SSH is installed and works properly:\
-  `aaa`\
-  `aaa`
-- What is SSH and the value of using it: `Aaa`
-- Verify that SSH only uses port 4242: `aaa`
-- Use SSH to log in with newly created user: `aaa`
-- Make sure we cannot use SSH with root: `aaa`
+- Check SSH is installed and works properly & Verify that SSH only uses port 4242: `sudo service ssh status`
+- What is SSH and the value of using it: `TODO`
+- Use SSH to log in with newly created user: `ssh <test>@localhost -p 4243`
+- Make sure we cannot use SSH with root: `ssh root@localhost -p 4243` + enter password 3 times
 
 ## Script monitoring
 
