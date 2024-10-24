@@ -107,8 +107,14 @@
 ## Script monitoring
 
 - Explain the monitoring.sh script: `Aaa`
-- What is CRON: `Aaa`
-- How the script was setup to run every 10 minutes & make it run every minutes instead (without modifying the script iteself: `Aaa`
+- What is CRON: `CRON is a time-based job scheduler in Unix-like systems. It automates tasks by running scripts or commands at specified intervals (e.g., daily, weekly) based on defined schedules in a configuration file called crontab.`
+- How the script was setup to run every 10 minutes & make it run every minutes instead: `sudo crontab -e -u root` + change the line into: `* * * * * /home/<user>/monitoring.sh | wall`
+- Stop and restart the CRON job (without changing the code):
+  ```
+  sudo service cron status
+  
+  ```
+
 
 ## Bonus
 
