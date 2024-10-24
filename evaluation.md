@@ -36,26 +36,26 @@
 - Verify password policy rules:
   - Create a new user: `sudo adduser <test>`
   - Assign it a password respecting subject rules: `Test creating passwords in order and check erro messages: 'test', 'test1', 'test1A', 'test1Abcde', 'tes1Abcdef', 'HelloBcn123'`
-  - Explain how rules as been applied:
+- Explain how rules as been applied:
     ```
     $ sudo visudo -f /etc/sudoers.d/<config_global>
     $ sudo nano /etc/login.defs
     $ sudo chage -M <30> <root|eproust>
     $ sudo chage -m <2> <root|eproust>
     ```
-  - Create a group named "evaluating" & assign the new user to it & check:\
+- Create a group named "evaluating" & assign the new user to it & check:
     ```
     $ sudo addgroup evaluating
     $ sudo adduser <test> evaluating
     $ getent group evaluating
     $ sudo chage -l <test>
     ```
-  - Explain the advantages of this password policy: **TODO**
+- Explain the advantages of this password policy: `It improves system security: i forces to change password regularly in case of password leak, and when we update the password (including root user), we are forced to use a strong password (to prevent bruteforce attacks).`
 
 ## Hostname and partitions
 
 - Check hostname format: `hostname`
-- Modify hostname to the evaluator login & restart the machine & check:\
+- Modify hostname to the evaluator login & restart the machine & check:
   ```
   $ sudo nano /etc/hostname # And update login
   $ sudo nano /etc/hosts # And update login
@@ -63,7 +63,7 @@
   $ hostname
   ```
 - Check that partitions match the structure in the subject: `lsblk`
-- What is LVM about and how it works:\
+- What is LVM about and how it works:
   ```
   - Logical Volume Management allows to allocate space on storage devices in a more dynamic / flexible than using traditional partioning on logical - partitions: no need to unmount the volume and backup files, delete and create a new partition.
   - It uses command line to update partitions size: 'lvcreate', 'lvresize', 'lvremove', etc.
@@ -74,7 +74,14 @@
 
 - Check sudo program is installed: `dpkg -s sudo`
 - Assign the new user to "sudo" group" `sudo adduser <test> sudo`
-- Explain the value and operation of sudo using example of your choice: `TODO`
+- Explain the value of sudo:
+  ```
+  - It is short for "superuser do".
+  - It temporarly grant elevated privileges to user, in order to perform administrative tasks without needing to log in as the root user.
+  - It enhances security by reducing the time spent with elevated privileges
+  - It maintains a log of all sudo commands.
+  ```
+- Explain the operation of sudo using an example: `'sudo apt install vim' will temporary grant the root privileges to the current user, so he will be able to modify system files (installing VIM program). A password will be ask to ensure security. Once the command executed, the user takes back its normal priviledges.`
 - Verify that "/var/log/sudo/" folder exists and has at least one file: `sudo ls /var/log/sudo`
 - Check the content of the files in this folder (you should se a history of commands used with sudo), then run a command via sudo & check that the log file was updated:
   ```
