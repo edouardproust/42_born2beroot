@@ -153,7 +153,12 @@
 
 - Check Wordpress:\
   `In browser: 'http://localhost:1672/wordpress'`
-  `aaa` (Only installing the services required by the subject)
+- Check services required by the subject:
+  ```
+  php -v
+  sudo service lighttpd status
+  sudo service mariadb status
+  ```
 - Check additional service installed:\
   `aaa`
   `aaa`
