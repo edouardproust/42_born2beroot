@@ -84,9 +84,9 @@
 - Check that partitions match the structure in the subject: `lsblk`
 - What is LVM about and how it works:
   ```
-  - Logical Volume Management allows to allocate space on storage devices in a more dynamic / flexible than using traditional partioning on logical - partitions: no need to unmount the volume and backup files, delete and create a new partition.
+  - Logical Volume Management allows to allocate space on storage devices in a more dynamic / flexible manner than using traditional partioning: no need to unmount the volume and backup files, delete and create a new partition.
   - It uses command line to update partitions size: 'lvcreate', 'lvresize', 'lvremove', etc.
-  - We created an encrypted logical (traditional) partition, that we divided into LVM sub-partitions for more flexibility.`
+  - We created an encrypted logical (traditional) partition, that we divided into LVM sub-partitions for more flexibility.
   ```
 
 ## SUDO
