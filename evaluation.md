@@ -58,7 +58,10 @@
     $ getent group evaluating
     $ sudo chage -l <test>
     ```
-- Explain the advantages of this password policy: `It improves system security: i forces to change password regularly in case of password leak, and when we update the password (including root user), we are forced to use a strong password (to prevent bruteforce attacks).`
+- Explain the advantages of this password policy:
+  ```
+  It improves system security: i forces to change password regularly in case of password leak, and when we update the password (including root user), we are forced to use a strong password (to prevent bruteforce attacks).
+  ```
 
 ## Hostname and partitions
 
@@ -89,7 +92,10 @@
   - It enhances security by reducing the time spent with elevated privileges
   - It maintains a log of all sudo commands.
   ```
-- Explain the operation of sudo using an example: `'sudo apt install vim' will temporary grant the root privileges to the current user, so he will be able to modify system files (installing VIM program). A password will be ask to ensure security. Once the command executed, the user takes back its normal priviledges.`
+- Explain the operation of sudo using an example:
+  ```
+  'sudo apt install vim' will temporary grant the root privileges to the current user, so he will be able to modify system files (installing VIM program). A password will be ask to ensure security. Once the command executed, the user takes back its normal priviledges.
+  ```
 - Verify that "/var/log/sudo/" folder exists and has at least one file: `sudo ls /var/log/sudo`
 - Check the content of the files in this folder (you should se a history of commands used with sudo), then run a command via sudo & check that the log file was updated:
   ```
@@ -101,7 +107,10 @@
 ## UFW
 
 - Check "UFW" program is installed & works properly: `sudo service ufw status`
-- What is UFW and the value of using it: `A firewall management tool that simplifies configuring iptables to control incoming and outgoing network traffic based on defined rules.`
+- What is UFW and the value of using it:
+  ```
+  A firewall management tool that simplifies configuring iptables to control incoming and outgoing network traffic based on defined rules.
+  ```
 - List all the actives rules in UFW (a rule must exist for port 4242): `sudo ufw status`
 - Add a new rule to open port 8080 & check is has been added to the list: `sudo ufw allow 8080`
 - Delete this new rule:
@@ -115,14 +124,20 @@
 ## SSH
 
 - Check SSH is installed and works properly & Verify that SSH only uses port 4242: `sudo service ssh status`
-- What is SSH and the value of using it: `SSH means Secure Shell. It is a protocol for secure remote access and management of devices over an unsecured network. It encrypts data.`
+- What is SSH and the value of using it:
+  ```
+  SSH means Secure Shell. It is a protocol for secure remote access and management of devices over an unsecured network. It encrypts data.
+  ```
 - Use SSH to log in with newly created user: `ssh <test>@localhost -p 4243`
 - Make sure we cannot use SSH with root: `ssh root@localhost -p 4243` + enter password 3 times
 
 ## Script monitoring
 
 - Explain the monitoring.sh script
-- What is CRON: `CRON is a time-based job scheduler in Unix-like systems. It automates tasks by running scripts or commands at specified intervals (e.g., daily, weekly) based on defined schedules in a configuration file called crontab.`
+- What is CRON:
+  ```
+  CRON is a time-based job scheduler in Unix-like systems. It automates tasks by running scripts or commands at specified intervals (e.g., daily, weekly) based on defined schedules in a configuration file called crontab.
+  ```
 - How the script was setup to run every 10 minutes & make it run every minutes instead: `sudo crontab -e -u root` + change the line into: `* * * * * /home/<user>/monitoring.sh | wall`
 - Stop and restart the CRON job (without changing the code):
   ```
