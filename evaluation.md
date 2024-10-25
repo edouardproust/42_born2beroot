@@ -161,7 +161,7 @@
   ```
 - Check additional service installed:
   ```
-  sudo apt install systemd-timesyncd`
+  sudo apt install systemd-timesyncd
   timedatectl
   sudo service systemd-timesyncd status
   ```
