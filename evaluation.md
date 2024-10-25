@@ -163,6 +163,7 @@
   ```
   sudo apt install systemd-timesyncd`
   timedatectl
+  sudo service systemd-timesyncd status
   ```
 - Explain what you chose this additional service (why it is useful):
   ```
