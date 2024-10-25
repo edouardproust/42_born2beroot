@@ -62,6 +62,7 @@
   ```
   It improves system security: i forces to change password regularly in case of password leak, and when we update the password (including root user), we are forced to use a strong password (to prevent bruteforce attacks).
   ```
+- Update password: `sudo passwd <user_name>`
 
 ## Hostname and partitions
 
