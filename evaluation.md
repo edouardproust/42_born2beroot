@@ -107,9 +107,9 @@
 - Verify that "/var/log/sudo/" folder exists and has at least one file: `sudo ls /var/log/sudo`
 - Check the content of the files in this folder (you should se a history of commands used with sudo), then run a command via sudo & check that the log file was updated:
   ```
-  sudo cat /var/log/sudo
+  sudo cat /var/log/sudo/<general_log>
   sudo apt update
-  sudo cat /var/log/sudo
+  sudo cat /var/log/sudo/<general_log>
   ```
 
 ## UFW
