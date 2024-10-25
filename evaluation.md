@@ -18,7 +18,7 @@
 - The basic difference between CentOS and Debian
   ```
   - CentOS/Rocky history: Initially a downstream version of RedHat Entreprise Linux, it moved to CentOS Stream (upstream version of RHEL). Rocky was created as "100% bug-for-bug compatible" with RHEL.
-  - Audience: CentOS/Rocky is better for companies / Debian is better for individuals
+  - Audience: CentOS/Rocky is better for companies (server environments & enterprise applications) / Debian is better for individuals
   - Stability & Updates Debian is extensive open-source & balancing stability and updates / CentOS is stability focus & has a predictable release cycle based on a schedule (for comapanies)
   - They use different package type (Debian: .deb / CentOS: .rpm) and package managers (Debian: apt / CentOS: yum & dnf)
   ```
