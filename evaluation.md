@@ -30,10 +30,10 @@
   ```
   'aptitude' enhances 'apt' and 'apt-get':
   - more user-friendly interface (interactive navigation),
-  - better dependency resolution, advanced search capabilities,
+  - better dependency resolution / mark packages for auto-removal,
+  - advanced search capabilities,
   - allows viewing and managing package states,
-  - allows to simulate actions before execution,
-  - and can mark packages for auto-removal.
+  - allows to simulate actions before execution
   ```
 - What is APPArmor:
   ```
