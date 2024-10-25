@@ -28,7 +28,12 @@
   ```
 - 'aptitude' vs 'apt':
   ```
-  'aptitude' enhances 'apt' and 'apt-get': more user-friendly interface (interactive navigation), better dependency resolution, advanced search capabilities, allows viewing and managing package states, allows to simulate actions before execution, and can mark packages for auto-removal.
+  'aptitude' enhances 'apt' and 'apt-get':
+  - more user-friendly interface (interactive navigation),
+  - better dependency resolution, advanced search capabilities,
+  - allows viewing and managing package states,
+  - allows to simulate actions before execution,
+  - and can mark packages for auto-removal.
   ```
 - What is APPArmor:
   ```
