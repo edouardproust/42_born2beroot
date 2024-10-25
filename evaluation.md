@@ -3,7 +3,9 @@
 ### Project overview
 
 - What is a virtual machine?
-`A VM can run programs and apps (like an OS) but it uses software allocated ressources instead of a physical computer: each VM on one machine get virtual components (RAM, Hard drive, etc) as portions or the physical hardware.`
+  ```
+  A VM can run programs and apps (like an OS) but it uses software allocated ressources instead of a physical computer: each VM on one machine get virtual components (RAM, Hard drive, etc) as portions or the physical hardware.
+  ```
 - Why you chose Debian (over Rocky)?
   ```
   - Debian is more user-firendly / easier to use
@@ -22,8 +24,14 @@
   - Several VM can work on a single machine: it reduces cost and makes easier maintenance
   - Each VM is totally isolated from others: it guaranties security
   ```
-- 'aptitude' vs 'apt': `'aptitude' enhances 'apt' and 'apt-get': more user-friendly interface (interactive navigation), better dependency resolution, advanced search capabilities, allows viewing and managing package states, allows to simulate actions before execution, and can mark packages for auto-removal.`
-- What is APPArmor: `A security module in the Linux kernel that allows the system administrator to restrict the capabilities of a program.`
+- 'aptitude' vs 'apt':
+  ```
+  'aptitude' enhances 'apt' and 'apt-get': more user-friendly interface (interactive navigation), better dependency resolution, advanced search capabilities, allows viewing and managing package states, allows to simulate actions before execution, and can mark packages for auto-removal.
+  ```
+- What is APPArmor:
+  ```
+  A security module in the Linux kernel that allows the system administrator to restrict the capabilities of a program.
+  ```
 
 ## Simple setup
 
