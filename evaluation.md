@@ -159,8 +159,12 @@
   sudo service lighttpd status
   sudo service mariadb status
   ```
-- Check additional service installed:\
-  `aaa`
-  `aaa`
-  `aaa`
-- Explain what you chose this additional service (why it is useful): `aaa`
+- Check additional service installed:
+  ```
+  sudo apt install systemd-timesyncd`
+  timedatectl
+  ```
+- Explain what you chose this additional service (why it is useful):
+  ```
+   Time Synchronization: If the system's time is out of sync, it can lead to errors during the verification of package signatures or SSL certificates, causing `apt` to be unable to validate updates.
+  ```
