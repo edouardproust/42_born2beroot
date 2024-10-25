@@ -4,7 +4,10 @@
 
 - What is a virtual machine?
   ```
-  A VM can run programs and apps (like an OS) but it uses software allocated ressources instead of a physical computer: each VM on one machine get virtual components (RAM, Hard drive, etc) as portions or the physical hardware.
+  - A virtual machine is a virtualized computer that operates using virtual hardware.
+  - It runs on a host system and shares the physical hardware resources (like CPU, memory, and storage) of the host.
+  - The VM behaves like an independent computer, allowing you to run different operating systems and applications as if they were on separate physical machines.
+  - This virtualization enables efficient resource utilization and isolation between different VMs on the same physical hardware.
   ```
 - Why you chose Debian (over Rocky)?
   ```
