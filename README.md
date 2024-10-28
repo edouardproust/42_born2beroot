@@ -3,7 +3,7 @@
 ## 1. Install VirtualBox
 
 
-1. [Download the minimal image ("netinst") of Debian](https://www.debian.org/distrib/netinst) + choose "amd64"\
+1. [Download the minimal image ("netinst") of Debian](https://www.debian.org/distrib/netinst) + choose "amd64"
 2. Create VirtualBox:\
    `$ sudo apt update && sudo apt upgrade -y && sudo apt install virtualbox -y`\
    `$ virtualbox &` (To run VirtualBox. `&` is for opening it in the background)\
