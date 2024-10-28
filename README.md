@@ -171,9 +171,6 @@ In browser: http://localhost:1672/wordpress (NOT https) and finish setup:\
     
 `sudo apt update && sudo apt upgrade -y`
 
-Install man & VIM:\
-`$ sudo apt install man vim`
-
 Add system clock syncronization:\
 `$ sudo apt install systemd-timesyncd`\
 `$ timedatectl` (To check time sync is on)\
